@@ -1,0 +1,12 @@
+numpy==1.17.2
+scikit-learn==0.21.3
+pip==19.2.3
+pandas==0.23.4
+
+# packaging
+setuptools==40.6.3
+wheel==0.33.6
+Flask==1.1.1
+
+# testing requirements
+pytest==5.1.2
