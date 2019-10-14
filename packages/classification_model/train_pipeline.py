@@ -62,7 +62,7 @@ def run_training() -> None:
         data[config.TARGET],
         test_size=0.33, random_state=42)  # we are setting the seed here
 
-    pipeline.loan_status_pipe.fit(X_train[config.FEATURES],y_train)
+    pipeline.loan_status_pipe.fit(X_train[config.FEATURES],y_train) 
 
     save_pipeline(pipeline_to_persist=pipeline.loan_status_pipe)
 

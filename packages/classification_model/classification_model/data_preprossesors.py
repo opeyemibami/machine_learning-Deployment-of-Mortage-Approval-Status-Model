@@ -2,29 +2,10 @@ import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder , StandardScaler
-class CategoricalImputer(BaseEstimator, TransformerMixin):
-	"""Categorical data missing value imputer."""
+#for testing purposes 
+from classification_model.config import config
 
-	def __init__(self, variables=None) -> None:
-		if not isinstance(variables, list):
-			self.variables = [variables]
-		else:
-			self.variables = variables
 
-	def fit(self, X: pd.DataFrame, y: pd.Series = None) -> 'CategoricalImputer':
-			
-		"""Fit statement to accomodate the sklearn pipeline."""
-
-		return self
-
-	def transform(self, X: pd.DataFrame) -> pd.DataFrame:
-		"""Apply the transforms to the dataframe."""
-
-		X = X.copy()
-		for feature in self.variables:
-			X[feature] = X[feature].fillna('Missing')
-
-		return X
 
 
 class NumericalMissingnessFeature(BaseEstimator, TransformerMixin):
@@ -111,7 +92,7 @@ class LabelEncoding(BaseEstimator, TransformerMixin):
 
 
 
-class OneHotEncoding(BaseEstimator, TransformerMixin):
+class OneHotEncoding(BaseEstimator, TransformerMixin):			
 	"""String to numbers categorical encoder."""
 
 	def __init__(self, variable=None):
@@ -123,7 +104,7 @@ class OneHotEncoding(BaseEstimator, TransformerMixin):
 	def fit(self, X, y):
 		self.onehot_dic_ = {}
 		for col in self.variable:
-			self.onehot_dic_[col+'_fitted'] = OneHotEncoder(sparse=False)
+			self.onehot_dic_[col+'_fitted'] = OneHotEncoder(sparse=False,dtype=np.uint8)
 			self.onehot_dic_[col+'_fitted'].fit((np.array(X[col])).reshape(-1, 1))
 
 		return self
@@ -139,7 +120,7 @@ class OneHotEncoding(BaseEstimator, TransformerMixin):
 			X.drop(columns=[col],axis=1,inplace=True)
 			dummies = pd.DataFrame(data=dummies,columns=self.heading,dtype=np.int)
 			X = pd.concat([X,dummies],axis=1)    #concatinating the dummy to X
-			
+		X	
 		return X
 
 
@@ -181,14 +162,12 @@ class GaussianOutlier(BaseEstimator, TransformerMixin):
 			self.variable = [variable]
 		else:
 			self.variable = variable
-			
-		self.enc = LabelEncoder()
 
 	def fit(self, X, y):
 
 		self.outlier_replace_dic_ = {}
 		for col in self.variable:
-			self.upper_b = X[col].mean() + 3*X[col].std()
+			self.upper_b = X[col].mean() + 3*(X[col].std())
 			self.outlier_replace_dic_[col + str('upper')]=self.upper_b
 
 		return self
@@ -276,7 +255,13 @@ class FinallyTraining(BaseEstimator, TransformerMixin):
 	def transform(self, X):
 		self.testing_message = 'prediction is also possible with this pipeline, you might wanna go for a coffe break'
 		print(self.testing_message)
+		print(X.columns)
+		print(X.shape)
+		#X.to_csv(config.DATASET_DIR / 'cleaned_X.csv',index=False)
 		return X
+
+
+
 
 # class TargetEncoder(BaseEstimator, TransformerMixin):
 #     """String to numbers categorical encoder."""
@@ -319,6 +304,29 @@ class FinallyTraining(BaseEstimator, TransformerMixin):
 #         return X
 
 
+# class CategoricalImputer(BaseEstimator, TransformerMixin):
+# 	"""Categorical data missing value imputer."""
+
+# 	def __init__(self, variables=None) -> None:
+# 		if not isinstance(variables, list):
+# 			self.variables = [variables]
+# 		else:
+# 			self.variables = variables
+
+# 	def fit(self, X: pd.DataFrame, y: pd.Series = None) -> 'CategoricalImputer':
+			
+# 		"""Fit statement to accomodate the sklearn pipeline."""
+
+# 		return self
+
+# 	def transform(self, X: pd.DataFrame) -> pd.DataFrame:
+# 		"""Apply the transforms to the dataframe."""
+
+# 		X = X.copy()
+# 		for feature in self.variables:
+# 			X[feature] = X[feature].fillna('Missing')
+
+# 		return X
 
 
 
