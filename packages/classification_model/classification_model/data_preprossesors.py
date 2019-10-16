@@ -255,8 +255,8 @@ class FinallyTraining(BaseEstimator, TransformerMixin):
 	def transform(self, X):
 		self.testing_message = 'prediction is also possible with this pipeline, you might wanna go for a coffe break'
 		print(self.testing_message)
-		print(X.columns)
-		print(X.shape)
+		# print(X.columns)
+		# print(X.shape)
 		#X.to_csv(config.DATASET_DIR / 'cleaned_X.csv',index=False)
 		return X
 
@@ -327,10 +327,3 @@ class FinallyTraining(BaseEstimator, TransformerMixin):
 # 			X[feature] = X[feature].fillna('Missing')
 
 # 		return X
-
-
-
-
-
-
-

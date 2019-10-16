@@ -3,7 +3,10 @@ from sklearn.pipeline import Pipeline
 
 from classification_model import data_preprossesors as pp
 
+import logging
 
+
+_logger = logging.getLogger(__name__)
 
 
 CATEGORICAL_VARS = ['loan_type',

@@ -53,10 +53,13 @@ GUASSIAN_OUTLIER_VARS =['applicant_income']
 
 INCOME_LOAN_RATIO_VARS = ['loan_amount','applicant_income']
 
-DROP_FEATURES = ['applicant_race']
+DROP_FEATURES = ['applicant_race'] 
 
 
 NUMERICAL_NA_NOT_ALLOWED = [
     feature for feature in FEATURES
     if feature not in NUMERICAL_VARS_FOR_MEAN_IMPUTING + NUMERICAL_VARS_FOR_MEDIAN_IMPUTING 
     ]
+
+PIPELINE_NAME = 'gradientboosting_classification'
+PIPELINE_SAVE_FILE = f'{PIPELINE_NAME}_output_v'

@@ -4,7 +4,14 @@ from sklearn.model_selection import train_test_split
 from classification_model import pipeline
 from classification_model.preprocessing.data_management import (
     load_dataset, save_pipeline)
-from classification_model.config import config
+from classification_model.config import config  
+from regression_model import __version__ as _version
+
+import logging
+
+
+_logger = logging.getLogger(__name__)
+
 
 
 
@@ -26,7 +33,8 @@ def run_training() -> None:
     #     test_size=0.33, random_state=42)  # we are setting the seed here
 
     pipeline.loan_status_pipe.fit(data[config.FEATURES],data[config.TARGET])
-
+    
+    _logger.info(f'saving model version: {_version}')
     save_pipeline(pipeline_to_persist=pipeline.loan_status_pipe)
     return
 
