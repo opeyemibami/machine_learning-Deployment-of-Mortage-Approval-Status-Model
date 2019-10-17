@@ -7,6 +7,10 @@ PACKAGE_ROOT = pathlib.Path(classification_model.__file__).resolve().parent
 TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trained_models'
 DATASET_DIR = PACKAGE_ROOT / 'datasets'
 
+LOG_DIR = PACKAGE_ROOT / 'logs'
+LOG_DIR.mkdir(exist_ok=True)
+LOG_FILE = LOG_DIR / 'ml_models.log'
+
 # data
 TESTING_DATA_FILE = 'test.csv'
 TRAINING_DATA_FILE = 'train.csv'

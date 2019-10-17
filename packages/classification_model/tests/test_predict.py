@@ -20,7 +20,7 @@ def test_make_single_prediction():
 def test_make_multiple_predictions():
     # Given
     test_data = load_dataset(file_name='test.csv')
-    original_data_length = len(test_data)
+    #original_data_length = len(test_data)
     multiple_test_json = test_data.to_json(orient='records')
 
     # When
@@ -34,4 +34,4 @@ def test_make_multiple_predictions():
 
 
     # We expect some rows to be filtered out
-    #assert len(subject.get('predictions')) != original_data_length
+    #assert len(subject.get('predictions')) == original_data_length

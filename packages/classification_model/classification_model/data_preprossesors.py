@@ -9,7 +9,10 @@ from classification_model.config import config
 
 
 class NumericalMissingnessFeature(BaseEstimator, TransformerMixin):
-	"""Numerical missingness feature creator."""
+	"""
+	Numerical missingness feature creator.
+	
+	"""
 
 	def __init__(self, variables=None):
 		if not isinstance(variables, list):
