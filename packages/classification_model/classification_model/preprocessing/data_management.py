@@ -1,5 +1,6 @@
 import pandas as pd
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
+import joblib
 from sklearn.pipeline import Pipeline
 
 from classification_model.config import config
@@ -26,6 +27,20 @@ def save_pipeline(*, pipeline_to_persist) -> None:
 
     print('saved pipeline')
 
+#for swagger ########################################
+def save_pipeline_swagger(*, pipeline_to_persist) -> None:
+    """Persist the pipeline."""
+
+    save_file_name = 'classification_model.pkl'
+    save_path = config.TRAINED_MODEL_DIR / save_file_name
+
+    joblib.dump(pipeline_to_persist, save_path)
+
+    print('saved pipeline')
+
+####################################################
+
+
 
 
 def load_pipeline(*, file_name: str
@@ -36,6 +51,7 @@ def load_pipeline(*, file_name: str
     saved_pipeline = joblib.load(filename=file_path)
     return saved_pipeline
 
+
 def remove_old_pipelines(*, files_to_keep) -> None:
     """
     Remove old model pipelines.
@@ -45,5 +61,5 @@ def remove_old_pipelines(*, files_to_keep) -> None:
     """
 
     for model_file in config.TRAINED_MODEL_DIR.iterdir():
-        if model_file.name not in [files_to_keep, '__init__.py']:
+        if model_file.name not in [files_to_keep, '__init__.py','classification_model.pkl']:
             model_file.unlink()

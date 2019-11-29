@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 
 from classification_model import pipeline
 from classification_model.preprocessing.data_management import (
-    load_dataset, save_pipeline)
+    load_dataset, save_pipeline,save_pipeline_swagger)
 from classification_model.config import config  
 from regression_model import __version__ as _version
 
@@ -39,5 +39,19 @@ def run_training() -> None:
     return
 
 
+# For swagger 
+def run_training_swagger() -> None:
+    """Train the model."""
+
+     # read training data
+    data = load_dataset(file_name=config.TRAINING_DATA_FILE)
+
+
+    pipeline.loan_status_pipe.fit(data[config.FEATURES],data[config.TARGET])
+    save_pipeline_swagger(pipeline_to_persist=pipeline.loan_status_pipe)
+    return
+
+
 if __name__ == '__main__':
     run_training()
+    run_training_swagger()

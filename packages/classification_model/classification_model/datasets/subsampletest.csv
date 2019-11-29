@@ -1,0 +1,6 @@
+row_id,loan_type,property_type,loan_purpose,occupancy,loan_amount,preapproval,msa_md,state_code,county_code,applicant_ethnicity,applicant_race,applicant_sex,applicant_income,population,minority_population_pct,ffiecmedian_family_income,tract_to_msa_md_income_pct,number_of_owner-occupied_units,number_of_1_to_4_family_units,lender,co_applicant
+304897,2,1,3,1,113,3,356,5,98,3,5,1,47,3256,24.824,52771,100,800,1013,5684,FALSE
+386541,1,1,2,1,10,3,10,34,11,2,5,1,12,7274,16.243,87259,100,2097,2674,4701,TRUE
+453817,1,1,3,1,270,3,24,37,20,1,5,2,75,4835,86.704,64204,100,864,1049,5123,TRUE
+352553,3,1,1,1,514,3,10,34,11,2,5,1,159,7542,15.455,87564,97.056,2529,2985,814,FALSE
+273259,1,1,1,1,92,3,150,14,3,2,5,1,43,5407,18.518,63502,100,1747,1888,1143,FALSE

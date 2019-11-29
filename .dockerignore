@@ -1,0 +1,8 @@
+.git
+.gitignore
+notebooks*
+*/ml_deployment_env*
+.vscode
+.pytest_cache
+.ipynb_checkpoints
+*/classification_model.egg-info/

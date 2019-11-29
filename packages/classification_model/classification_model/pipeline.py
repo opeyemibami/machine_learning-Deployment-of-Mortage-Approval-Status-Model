@@ -61,7 +61,7 @@ loan_status_pipe = Pipeline(
 	 	('Income_Loan_Ratio_Feature_Generator',pp.IncomeLoanRatioFeatureGenerator(variable=INCOME_LOAN_RATIO_VARS)),
 	 	('label_encoding',pp.LabelEncoding(variable=VAR_TO_BE_LABELENCODED)),
 	 	#('st_scaler',pp.StdScaler()),
-	 	('pipeline_breakpoint',pp.FinallyTraining()),
+	 	#('pipeline_breakpoint',pp.FinallyTraining()),
 	 	('Classifier',GradientBoostingClassifier(n_estimators= 300,learning_rate=0.1,random_state=42))
 	]
 

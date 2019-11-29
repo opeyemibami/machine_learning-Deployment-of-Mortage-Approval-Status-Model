@@ -1,0 +1,5 @@
+# api
+flask==1.0.2
+
+# local classification_model package
+-e "C:\Users\Lenovo edge\Desktop\DataScience\career_path\Projects\Mortgages\packages\classification_model"
