@@ -1,5 +1,11 @@
+--extra-index-url=${PIP_INDEX_URL}
+
 # api
 flask==1.0.2
 
 # local classification_model package
--e "C:\Users\Lenovo edge\Desktop\DataScience\career_path\Projects\Mortgages\packages\classification_model"
+#-e "C:\Users\Lenovo edge\Desktop\DataScience\career_path\Projects\Mortgages\packages\classification_model"
+
+#install from gemfury
+classification-model==0.1.0
+  

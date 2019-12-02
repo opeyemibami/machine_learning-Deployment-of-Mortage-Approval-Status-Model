@@ -113,7 +113,7 @@ venv.bak/
 .idea/
 
 # pickle files
-*.pkl
+#*.pkl
 
 # datafiles
 train.csv
