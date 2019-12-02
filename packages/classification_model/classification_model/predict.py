@@ -4,7 +4,7 @@ import pandas as pd
 from classification_model.preprocessing.data_management import load_pipeline
 from classification_model.config import config
 from classification_model.preprocessing.validation import validate_inputs
-from regression_model import __version__ as _version
+from classification_model import __version__ as _version
 
 import logging
 
