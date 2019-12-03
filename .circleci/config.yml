@@ -16,15 +16,14 @@ jobs:
             chmod +x ./scripts/fetch_kaggle_dataset.sh
             ./scripts/fetch_kaggle_dataset.sh
             py.test -vv packages/classification_model/tests
-
-train_and_upload_classification_model:
+  train_and_upload_classification_model:
     working_directory: ~/project
     docker:
       - image: circleci/python:3.7.2
     steps:
       - checkout
       - run: 
-          name: Setup env
+          name: Setup ml_deployment_env
           command: |
             virtualenv ml_deployment_env
             . ml_deployment_env/bin/activate

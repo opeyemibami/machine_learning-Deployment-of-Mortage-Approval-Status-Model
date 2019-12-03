@@ -5,7 +5,7 @@ from classification_model import pipeline
 from classification_model.preprocessing.data_management import (
     load_dataset, save_pipeline,save_pipeline_swagger)
 from classification_model.config import config  
-from regression_model import __version__ as _version
+from classification_model import __version__ as _version
 
 import logging
 
