@@ -53,5 +53,5 @@ def run_training_swagger() -> None:
 
 
 if __name__ == '__main__':
-    run_training()
+    #run_training()
     run_training_swagger()

@@ -1,15 +1,18 @@
-#prodcution requirements
-numpy==1.17.2
-scikit-learn==0.21.3
-pip==19.2.3
-pandas==0.25.1
+-r packages/ml_api/requirements.txt
+#######################################
+# #prodcution requirements
+# numpy==1.17.2
+# scikit-learn==0.21.3
+# pip==19.2.3
+# pandas==0.25.1
 
-#packaging
+# #packaging
 
 
-# packaging
-setuptools==40.6.3
-wheel==0.32.3
+# # packaging
+# setuptools==40.6.3
+# wheel==0.32.3
 
-# testing requirements
-pytest==4.0.2
+# # testing requirements
+# pytest==4.0.2
+# ################################################

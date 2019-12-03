@@ -65,3 +65,8 @@ def predict_loan_status():
     #return jsonify({'prediction':prediction_to_int})
     
     
+# @prediction_app_swagger.route('/api_health', methods=['GET'])
+# def health_swagger():
+#     if request.method == 'GET':
+#         _logger.info('health status OK')
+#         return 'ok'

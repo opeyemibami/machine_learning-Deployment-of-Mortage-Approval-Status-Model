@@ -8,4 +8,6 @@ flask==1.0.2
 
 #install from gemfury
 classification-model==0.1.0
-  
+
+# Deployment
+gunicorn==19.9.0
