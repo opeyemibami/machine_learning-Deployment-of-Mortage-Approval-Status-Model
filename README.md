@@ -1,4 +1,5 @@
-# machine_learning-Deployment-of-Mortage-Approval-Status-Model
+# Deployment-of-Mortage-Approval-Status-Model
+###  microsoft professional certification in data science capstone project
 
-### The project aimed at automating Mortgage applications status and prediction of loanable amount if acepted. 
+### The project aimed at automating Mortgage applications status and prediction of loanable amount if accepted. 
 *It is an extention of my microsoft professional certification in data science capstone project with personal efforts and interest in model deployment.*
