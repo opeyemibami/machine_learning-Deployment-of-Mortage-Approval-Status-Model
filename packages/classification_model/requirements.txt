@@ -1,7 +1,7 @@
 #prodcution requirements
 numpy==1.17.2
 scikit-learn==0.21.3
-pip==19.2.3
+pip==21.1
 pandas==0.25.1
 
 #packaging
